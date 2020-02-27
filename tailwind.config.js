@@ -1,6 +1,6 @@
 module.exports = {
-  prefix: 'tw-',
-  important: true,
+  prefix: '',
+  important: false,
   theme: {
     extend: {},
   },
