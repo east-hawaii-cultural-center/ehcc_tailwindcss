@@ -12,6 +12,7 @@
     "watch": "cross-env NODE_ENV=development postcss $npm_package_config_inputFile -o $npm_package_config_outputFile --watch"
   },
   "dependencies": {
+    "postcss": "^8.2.4",
     "tailwindcss": "^1.0.1"
   },
   "devDependencies": {
