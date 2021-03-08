@@ -1,15 +1,11 @@
 {
   "private": true,
-  "config": {
-    "inputFile": "src/tailwind.pcss",
-    "outputFile": "dist/tailwind.css"
-  },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development postcss $npm_package_config_inputFile -o $npm_package_config_outputFile",
+    "dev": "cross-env NODE_ENV=development postcss src/tailwind.pcss -o dist/tailwind.css",
     "development": "npm run dev",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production postcss $npm_package_config_inputFile -o $npm_package_config_outputFile",
-    "watch": "cross-env NODE_ENV=development postcss $npm_package_config_inputFile -o $npm_package_config_outputFile --watch"
+    "production": "cross-env NODE_ENV=production postcss src/tailwind.pcss -o dist/tailwind.css",
+    "watch": "cross-env NODE_ENV=development postcss src/tailwind.pcss -o dist/tailwind.css --watch"
   },
   "devDependencies": {
     "cross-env": "^5.2.1",
