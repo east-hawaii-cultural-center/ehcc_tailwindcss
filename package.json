@@ -1,17 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development postcss src/tailwind.pcss -o dist/tailwind.css",
-    "development": "npm run dev",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production postcss src/tailwind.pcss -o dist/tailwind.css",
-    "watch": "cross-env NODE_ENV=development postcss src/tailwind.pcss -o dist/tailwind.css --watch"
-  },
-  "devDependencies": {
-    "cross-env": "^5.2.1",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.2.4",
-    "postcss-cli": "^8.3.0"
+    "dev": "npx tailwindcss --input src/tailwind.pcss --output dist/tailwind.css --watch",
+    "build": "npx tailwindcss --input src/tailwind.pcss --output dist/tailwind.css --minify"
   },
   "dependencies": {
     "tailwindcss": "^2.2.16"
