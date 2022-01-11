@@ -1,9 +1,10 @@
 module.exports = {
-  mode: 'jit',
-  purge: ["**/*.twig"],
+  content: ["**/*.twig"],
   theme: {
     extend: {},
   },
-  variants: {},
-  plugins: []
-}
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
