@@ -1,3 +1,6 @@
+# This Dockerfile is intended for development purposes and isn't required for
+# using this theme.
+
 FROM node:alpine
 ENTRYPOINT sh
 WORKDIR /code
