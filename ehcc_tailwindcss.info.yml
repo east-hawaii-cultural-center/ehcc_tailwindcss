@@ -5,4 +5,4 @@ core_version_requirement: ^8 || ^9
 type: theme
 base theme: stable
 libraries:
-  - tailwindcss/global-styling
+  - ehcc_tailwindcss/global-styling
