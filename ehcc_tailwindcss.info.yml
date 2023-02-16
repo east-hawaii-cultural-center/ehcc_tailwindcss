@@ -1,5 +1,5 @@
-name: Tailwind CSS Starter Kit
-description: A starter kit theme for Drupal 8/9 and Tailwind CSS.
+name: EHCC Tailwind Theme
+description: A custom theme based on a Tailwind CSS starter kit theme.
 core: 8.x
 core_version_requirement: ^8 || ^9
 type: theme

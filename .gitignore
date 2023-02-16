@@ -1,6 +1,7 @@
 /*.log
 /mix-manifest.json
 /node_modules/
+/dist
 
 # Ignore compiled assets.
 # /dist/
