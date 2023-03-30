@@ -1,8 +1,8 @@
 name: EHCC Tailwind Theme
 description: A custom theme based on a Tailwind CSS starter kit theme.
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 type: theme
-base theme: stable
+base theme: stark
 libraries:
   - ehcc_tailwindcss/global-styling
