@@ -45,47 +45,52 @@
  * @ingroup themeable
  */
 #}
-<div class="container p-4 mx-auto bg-white border border-gray-400">
+{% set p = 'p-4 md:p-6' %}
+{% set mb = 'mb-4 md:mb-6' %}
+<div class="container mx-auto">
+  <div class="{{ p }} bg-white sm:border-x sm:border-t border-gray-400">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+    <header role="banner" class="flex flex-col items-center sm:flex-row {{ mb }}">
+      {{ page.header }}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
+      {{ page.primary_menu }}
+      {{ page.secondary_menu }}
+    </header>
 
-  {{ page.breadcrumb }}
+    {{ page.breadcrumb }}
 
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="-mx-4 md:flex">
-      <div class="p-4 md:flex-1">
-        {{ page.content }}
-      </div>{# /.layout-content #}
-
-      {% if page.sidebar_first %}
-        <aside class="p-4 md:w-1/4" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
-
-      {% if page.sidebar_second %}
-        <aside class="md:w-1/4" role="complementary">
-          {{ page.sidebar_second }}
-        </aside>
-      {% endif %}
+    <div id="highlighted" class="{{ mb }}">
+      {{ page.highlighted }}
     </div>
-  </main>
+
+    {{ page.help }}
+
+    <main role="main">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+      <div class="md:flex">
+        <div class="md:flex-1">
+          {{ page.content }}
+        </div>{# /.layout-content #}
+
+        {% if page.sidebar_first %}
+          <aside class="md:w-1/4" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        {% endif %}
+
+        {% if page.sidebar_second %}
+          <aside class="md:w-1/4" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
+      </div>
+    </main>
+  </div>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer role="contentinfo" class="{{ p }} bg-neutral-700 [&_a]:text-white [&_a:hover]:text-neutral-300">
       {{ page.footer }}
     </footer>
   {% endif %}
-
 </div>{# /.layout-container #}
