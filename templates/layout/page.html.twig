@@ -49,32 +49,27 @@
 {% set mb = 'mb-4' %}
 <div class="container mx-auto sm:p-4">
   <header id="header" role="banner" class="m-4 sm:mx-0 sm:mt-0 {{ mb }}">
-    <div class="row-span-2">
-
+    <div style="grid-area:logo" class="flex-shrink-0 row-span-full">
+    {{ page.header }}
     </div>
-    <div class="flex justify-between">
-      <div class="flex-shrink-0">
-      {{ page.header }}
+    <div style="grid-area:secondary" class="sm:flex justify-end text-right">
+      <div class="lg:hidden order-1">
+        <button class="js-primary-nav-toggle flex items-center px-3 py-2 ml-auto border rounded text-neutral-500 border-neutral-500 hover:text-teal-400 hover:border-teal-400">
+          <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
       </div>
-      <div class="sm:flex">
-        <div class="lg:hidden order-1">
-          <button id="primary-nav-toggle" class="flex items-center px-3 py-2 ml-auto border rounded text-neutral-500 border-neutral-500 hover:text-teal-400 hover:border-teal-400">
-            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-          </button>
-        </div>
-        <div class="my-2 sm:mr-6">
-          {{ page.search }}
-        </div>
+      <div class="my-2 ml-auto sm:mr-4 md:mr-6">
+        {{ page.secondary_menu }}
       </div>
     </div>
-    <div id="primary-nav-wrapper" class="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
+    <div style="grid-area:primary" class="js-primary-nav-wrapper w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
       {{ page.primary_menu }}
     </div>
   </header>
 
   <script>
-  const elButton = document.querySelector('#primary-nav-toggle');
-  const elLinkWrapper = document.querySelector('#primary-nav-wrapper');
+  const elButton = document.querySelector('.js-primary-nav-toggle');
+  const elLinkWrapper = document.querySelector('.js-primary-nav-wrapper');
   elButton.addEventListener('click', () => {
     elLinkWrapper.classList.toggle('hidden');
   });

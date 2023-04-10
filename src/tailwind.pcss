@@ -22,7 +22,18 @@
 
 @layer components {
   #header{
-    @apply lg:grid;
+    display: grid;
+    grid-template-areas:
+      "logo secondary"
+      "primary primary";
+
+    @media screen(lg) {
+      grid-template-areas:
+        "logo secondary"
+        "logo primary";
+    }
+    grid-template-columns: auto 1fr;
+    @apply gap-2;
   }
 
   .block,
