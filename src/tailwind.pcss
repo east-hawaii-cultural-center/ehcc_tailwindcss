@@ -50,4 +50,19 @@
   [id$="-local-tasks"] ul {
     @apply list-disc list-inside
   }
+
+  .fancy-underline{
+    position: relative;
+    z-index: 1;
+  }
+  .fancy-underline:after{
+    content: '';
+    display: block;
+    height: 5px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==");
+    position: relative;
+    top: -.5ex;
+    z-index: -1
+  }
 }
+
