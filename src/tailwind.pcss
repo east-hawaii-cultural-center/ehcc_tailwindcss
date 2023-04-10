@@ -4,7 +4,11 @@
 
 @layer base {
   input {
-    @apply border border-gray-500
+    @apply border border-gray-500 rounded-sm px-2;
+  }
+
+  input[type="submit"], input[type="button"]{
+    @apply cursor-pointer;
   }
 
   a {
@@ -17,6 +21,10 @@
 }
 
 @layer components {
+  #header{
+    @apply lg:grid;
+  }
+
   .block,
   .node {
     @apply mb-4
