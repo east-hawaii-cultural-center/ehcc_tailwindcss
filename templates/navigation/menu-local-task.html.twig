@@ -15,9 +15,10 @@
  */
 #}
 {% set classes = is_active 
-  ? "mr-2 [&>a]:inline-block [&>a]:p-4 [&>a]:text-blue-600 [&>a]:border-b-2 [&>a]:border-transparent [&>a]:rounded-t-lg [&>a]:hover:text-blue-700 [&>a]:hover:border-blue-700" 
-  : "mr-2 [&>a]:inline-block [&>a]:p-4 [&>a]:text-sky-600 [&>a]:border-b-2 [&>a]:border-transparent [&>a]:rounded-t-lg [&>a]:hover:text-sky-700 [&>a]:hover:border-sky-700"
+  ? "[&>a]:text-blue-600 [&>a]:border-blue-600 [&>a]:hover:text-blue-700 [&>a]:hover:border-sky-700" 
+  : "[&>a]:text-sky-600 [&>a]:border-transparent [&>a]:hover:text-sky-700 [&>a]:hover:border-sky-700"
 %}
-<li{{ attributes.addClass(classes) }}>
+
+<li{{ attributes.addClass("mr-2 [&>a]:inline-block [&>a]:p-4 [&>a]:border-b-2 [&>a]:rounded-t-lg", ) }}>
   {{ link }}
 </li>
