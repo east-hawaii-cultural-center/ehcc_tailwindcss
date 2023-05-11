@@ -113,9 +113,21 @@
     </main>
   </div>
 
-  <footer role="contentinfo" class="{{ p }} bg-neutral-700 [&_a]:text-white [&_a:hover]:text-neutral-300">
-    {% if page.footer %}
-      {{ page.footer }}
+  <footer role="contentinfo" class="{{ p }} bg-neutral-700 [&_a]:text-white [&_a:hover]:text-neutral-300 text-center grid grid-cols-1 md:grid-cols-3">
+  <div>
+    {% if page.footer_left %}
+      {{ page.footer_left }}
     {% endif %}
+  </div>
+  <div>
+    {% if page.footer_center %}
+      {{ page.footer_center }}
+    {% endif %}
+  </div>
+  <div>
+    {% if page.footer_right %}
+      {{ page.footer_right }}
+    {% endif %}
+  </div>
   </footer>
 </div>{# /.layout-container #}

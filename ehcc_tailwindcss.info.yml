@@ -10,10 +10,12 @@ regions:
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
   search: 'Search'
+  highlighted: Highlighted
   sidebar_first: 'Left sidebar'
   sidebar_second: 'Right sidebar'
-  content: Content
-  footer: Footer
-  highlighted: Highlighted
   breadcrumb: Breadcrumb
+  content: Content
   help: Help
+  footer_left: Footer Left
+  footer_center: Footer Center
+  footer_right: Footer Right
