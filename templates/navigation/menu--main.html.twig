@@ -36,7 +36,7 @@
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes.addClass("border-double border-teal-400 border-l-[7px] pl-2 lg:border-l-0 lg:border-r-[7px] lg:last:border-r-0 lg:py-1 lg:px-6") }}>
-        {{ link(item.title, item.url, { 'class': ['text-neutral-500', 'hover:text-teal-400', 'uppercase', 'font-bold', 'lg:text-xl'] }) }}
+        {{ link(item.title, item.url, { 'class': ['text-neutral-500', 'hover:text-teal-500', 'uppercase', 'font-bold', 'lg:text-xl'] }) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
