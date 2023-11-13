@@ -28,9 +28,9 @@
 {% if not is_inline %}
   {% include "field.html.twig" %}
 {% else %}
-<span{{ attributes }}>
+<h1{{ attributes.addClass("fancy-underline text-neutral-500 uppercase font-bold text-2xl lg:text-3xl") }}>
   {%- for item in items -%}
     {{ item.content }}
   {%- endfor -%}
-</span>
+</h1>
 {% endif %}

@@ -45,10 +45,9 @@
  * @ingroup themeable
  */
 #}
-{% set p = 'p-4 md:p-6' %}
-{% set mb = 'mb-4' %}
-<div class="container mx-auto sm:p-4">
-  <header id="header" role="banner" class="m-4 sm:mx-0 sm:mt-0 {{ mb }}">
+{% import '@ehcc_tailwindcss/macros.twig' as ehcc %}
+<header id="header" role="banner" class="{{ ehcc.container }} {{ ehcc.p }} {{ ehcc.mb }}">
+  <div class="header-nav-grid">
     <div style="grid-area:logo" class="flex-shrink-0 row-span-full">
     {{ page.header }}
     </div>
@@ -65,69 +64,72 @@
     <div style="grid-area:primary" class="js-primary-nav-wrapper w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
       {{ page.primary_menu }}
     </div>
-  </header>
+  </div>
+</header>
 
-  <script>
+<script>
   const elButton = document.querySelector('.js-primary-nav-toggle');
   const elLinkWrapper = document.querySelector('.js-primary-nav-wrapper');
   elButton.addEventListener('click', () => {
     elLinkWrapper.classList.toggle('hidden');
   });
-  </script>
-  <div id="highlighted" class="{{ mb }}">
+</script>
+{# <header role="banner" class="flex flex-col items-center sm:flex-row {{ ehcc.mb }}">
+  {{ page.header }}
+
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+</header> #}
+<div class="{{ ehcc.container }} {{ ehcc.p }} {{ ehcc.mb }}">
+  {# <div id="highlighted" class="{{ ehcc.mb }}">
     {{ page.highlighted }}
-  </div>
-  <div class="{{ p }} bg-white sm:border-x sm:border-t border-gray-400">
+  </div> #}
+  {{ page.highlighted }}
 
-    {# <header role="banner" class="flex flex-col items-center sm:flex-row {{ mb }}">
-      {{ page.header }}
+  {{ page.breadcrumb }}
 
-      {{ page.primary_menu }}
-      {{ page.secondary_menu }}
-    </header> #}
+  {{ page.help }}
+</div>
 
-    {{ page.breadcrumb }}
+<main role="main" class="flex-grow">
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    {{ page.help }}
+  <div class="md:flex text-neutral-700">
+    <div class="md:flex-1">
+      {{ page.content }}
+    </div>{# /.layout-content #}
 
-    <main role="main">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% if page.sidebar_first %}
+      <aside class="md:w-1/4 lg:w-1/5" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
 
-      <div class="md:flex">
-        <div class="md:flex-1">
-          {{ page.content }}
-        </div>{# /.layout-content #}
-
-        {% if page.sidebar_first %}
-          <aside class="md:w-1/4 lg:w-1/5" role="complementary">
-            {{ page.sidebar_first }}
-          </aside>
-        {% endif %}
-
-        {% if page.sidebar_second %}
-          <aside class="md:w-1/4 lg:w-1/5 md:ml-8" role="complementary">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
-      </div>
-    </main>
-  </div>
-
-  <footer role="contentinfo" class="{{ p }} bg-neutral-700 [&_a]:text-white [&_a:hover]:text-neutral-300 text-center grid grid-cols-1 md:grid-cols-3">
-  <div>
-    {% if page.footer_left %}
-      {{ page.footer_left }}
+    {% if page.sidebar_second %}
+      <aside class="md:w-1/4 lg:w-1/5 md:ml-8" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
     {% endif %}
   </div>
-  <div>
-    {% if page.footer_center %}
-      {{ page.footer_center }}
-    {% endif %}
+</main>
+
+<footer role="contentinfo" class="{{ ehcc.p }} bg-neutral-700 text-neutral-100 [&_a]:text-white [&_a:hover]:text-neutral-300">
+  <div class="{{ ehcc.container}} text-center grid grid-cols-1 md:grid-cols-3">
+    <div>
+      {% if page.footer_left %}
+        {{ page.footer_left }}
+      {% endif %}
+    </div>
+    <div>
+      {% if page.footer_center %}
+        {{ page.footer_center }}
+      {% endif %}
+    </div>
+    <div>
+      {% if page.footer_right %}
+        {{ page.footer_right }}
+      {% endif %}
+    </div>
   </div>
-  <div>
-    {% if page.footer_right %}
-      {{ page.footer_right }}
-    {% endif %}
-  </div>
-  </footer>
-</div>{# /.layout-container #}
+</footer>
+{# /.layout-container #}
