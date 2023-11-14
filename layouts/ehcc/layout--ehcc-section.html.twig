@@ -11,16 +11,19 @@
  * @ingroup themeable
  */
 #}
+{% import '@ehcc_tailwindcss/macros.twig' as ehcc %}
 {%
   set classes = [
     'layout',
-    'layout--onecol',
+    'layout--ehcc',
   ]
 %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
+  <div class="ehcc-container ehcc-p">
     <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
       {{ content.content }}
     </div>
   </div>
+</div>
 {% endif %}

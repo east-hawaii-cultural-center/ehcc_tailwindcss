@@ -19,3 +19,7 @@ regions:
   footer_left: Footer Left
   footer_center: Footer Center
   footer_right: Footer Right
+libraries-override:
+  layout_builder/twocol_section: ehcc_tailwindcss/layout_builder_twocol_section
+  layout_builder/threecol_section: ehcc_tailwindcss/layout_builder_threecol_section
+  layout_builder/fourcol_section: ehcc_tailwindcss/layout_builder_fourcol_section

@@ -2,3 +2,21 @@ global-styling:
   css:
     base:
       dist/tailwind.css: {}
+
+layout_builder_fourcol_section:
+  version: VERSION
+  css:
+    layout:
+      layouts/fourcol_section/fourcol_section.css: {}
+
+layout_builder_threecol_section:
+  version: VERSION
+  css:
+    layout:
+      layouts/threecol_section/threecol_section.css: {}
+
+layout_builder_twocol_section:
+  version: VERSION
+  css:
+    layout:
+      layouts/twocol_section/twocol_section.css: {}

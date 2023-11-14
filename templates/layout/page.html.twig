@@ -74,13 +74,7 @@
     elLinkWrapper.classList.toggle('hidden');
   });
 </script>
-{# <header role="banner" class="flex flex-col items-center sm:flex-row {{ ehcc.mb }}">
-  {{ page.header }}
-
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-</header> #}
-<div class="{{ ehcc.container }} {{ ehcc.p }} {{ ehcc.mb }}">
+<div class="{{ ehcc.container }} {{ ehcc.p }}">
   {# <div id="highlighted" class="{{ ehcc.mb }}">
     {{ page.highlighted }}
   </div> #}
@@ -90,7 +84,6 @@
 
   {{ page.help }}
 </div>
-
 <main role="main" class="flex-grow">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 

@@ -21,6 +21,13 @@
 }
 
 @layer components {
+  .ehcc-container{
+    @apply container mx-auto;
+  }
+  .ehcc-p{
+    @apply p-4 md:p-6;
+  }
+
   .header-nav-grid{
     display: grid;
     grid-template-areas:
@@ -51,18 +58,27 @@
     @apply list-disc list-inside
   } */
 
-  .fancy-underline{
+  .ehcc-underline{
     position: relative;
     z-index: 1;
   }
-  .fancy-underline:after{
+  .ehcc-underline:after{
     content: '';
     display: block;
     height: 5px;
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==");
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==');
     position: relative;
     top: -.5ex;
     z-index: -1
   }
 }
 
+/* Added this to fix a layout issue in the Layout Builder sidebar where the CK Editor triple dot menu gets cut off by overflow: auto on the parent */
+.ck.ck-toolbar-dropdown > .ck-dropdown__panel, #drupal-off-canvas [data-drupal-ck-style-fence] .ck.ck-toolbar-dropdown > .ck-dropdown__panel{
+  max-width: 260px !important;
+}
+
+.fancy-bird-bg{
+  background-image: url('https://drupal10.ddev.site/sites/default/files/inline-images/wallhaven-0q1ojr.jpg');
+  @apply bg-cover py-4;
+}

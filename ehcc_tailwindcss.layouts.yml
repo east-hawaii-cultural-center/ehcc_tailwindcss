@@ -1,8 +1,8 @@
-layout_ehcc:
-  label: 'EHCC'
-  path: layouts/ehcc
-  template: layout--ehcc
-  library: ehcc_tailwindcss/ehcc
+layout_ehcc_section:
+  label: 'EHCC Section'
+  path: layouts/ehcc-section
+  template: layout--ehcc-section
+  library: ehcc_tailwindcss/ehcc-section
   category: 'Columns: 1'
   default_region: content
   icon_map:
