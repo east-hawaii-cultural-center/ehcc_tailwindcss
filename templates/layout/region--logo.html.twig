@@ -12,21 +12,6 @@
  * @see template_preprocess_region()
  */
 #}
-{%
-  set classes = [
-    "group-[:not(.is-open)]/header:hidden",
-    "top-0",
-    "w-full",
-    "flex-grow",
-    "lg:static",
-    "lg:!flex",
-    "lg:items-center",
-    "lg:w-auto",
-    "lg:ml-4"
-  ]
-%}
-{% if content %}
-  <div style="grid-area:primary" {{ attributes.addClass(classes) }}>
-    {{ content }}
-  </div>
-{% endif %}
+<div style="grid-area:logo" {{ attributes.addClass("flex-shrink-0 row-span-full") }}>
+  {{ content }}
+</div>

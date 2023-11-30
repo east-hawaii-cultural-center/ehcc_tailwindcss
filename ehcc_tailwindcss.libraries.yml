@@ -2,6 +2,8 @@ global-styling:
   css:
     base:
       dist/tailwind.css: {}
+  js:
+    src/script.js: {}
 
 layout_builder_fourcol_section:
   version: VERSION

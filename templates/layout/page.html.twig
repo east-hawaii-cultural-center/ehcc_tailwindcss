@@ -45,36 +45,36 @@
  * @ingroup themeable
  */
 #}
-{% import '@ehcc_tailwindcss/macros.twig' as ehcc %}
-<header id="header" role="banner" class="{{ ehcc.container }} {{ ehcc.p }} {{ ehcc.mb }}">
-  <div class="header-nav-grid">
-    <div style="grid-area:logo" class="flex-shrink-0 row-span-full">
-    {{ page.header }}
+<header id="ehcc-header" role="banner" class="js-header group/header sticky top-0 bg-white bg-opacity-95 mb-4 z-10 [&.is-open]:overflow-y-auto [&.is-open]:fixed [&.is-open]:h-screen [&.is-open]:w-full [&.is-open]:bg-opacity-100">
+  <div class="ehcc-header-nav-grid ehcc-container ehcc-p gap-2">
+    <div style="grid-area:burger" class="lg:hidden">
+      <button class="js-primary-nav-toggle flex items-center px-3 py-2 ml-auto border rounded text-neutral-500 border-neutral-500 hover:text-teal-400 hover:border-teal-400">
+        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
     </div>
-    <div style="grid-area:secondary" class="sm:flex justify-end text-right">
-      <div class="lg:hidden order-1">
-        <button class="js-primary-nav-toggle flex items-center px-3 py-2 ml-auto border rounded text-neutral-500 border-neutral-500 hover:text-teal-400 hover:border-teal-400">
-          <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-      </div>
-      <div class="my-2 ml-auto sm:mr-4 md:mr-6">
-        {{ page.secondary_menu }}
-      </div>
-    </div>
-    <div style="grid-area:primary" class="js-primary-nav-wrapper w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
-      {{ page.primary_menu }}
-    </div>
+    {{ page.logo }}
+    {{ page.secondary_menu }}
+    {{ page.primary_menu }}
   </div>
 </header>
-
 <script>
+  const elHeader = document.querySelector('.js-header.group\\/header');
   const elButton = document.querySelector('.js-primary-nav-toggle');
-  const elLinkWrapper = document.querySelector('.js-primary-nav-wrapper');
   elButton.addEventListener('click', () => {
-    elLinkWrapper.classList.toggle('hidden');
+    elHeader.classList.toggle('is-open');
   });
+  {# const observer = new IntersectionObserver((values) => {
+    console.log('IntersectionObserver', values);
+    document.documentElement.classList.toggle('is-visible', values[0].isIntersecting);
+  }, { threshold: 1 });
+  observer.observe(document.querySelector('.js-header-trigger')); #}
+  {# const observer = new IntersectionObserver(([e]) => {
+    console.log('IntersectionObserver', e);
+    e.target.toggleAttribute('stuck', e.intersectionRatio < 1);
+  }, { threshold: [1] });
+  observer.observe(document.querySelector('#ehcc-header')); #}
 </script>
-<div class="{{ ehcc.container }} {{ ehcc.p }}">
+<div class="ehcc-container ehcc-p">
   {# <div id="highlighted" class="{{ ehcc.mb }}">
     {{ page.highlighted }}
   </div> #}

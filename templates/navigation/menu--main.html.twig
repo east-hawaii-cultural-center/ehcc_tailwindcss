@@ -29,14 +29,28 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
+    {# "border-double border-teal-400 border-l-[7px] pl-2 lg:border-l-0 lg:border-r-[7px] lg:last:border-r-0 lg:py-1 lg:px-6" #}
+    {% set item_style = "text-neutral-500 hover:text-teal-500 font-bold text-xl" %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass("lg:flex lg:flex-grow") }}>
+      <ul {{ attributes.addClass("bg-neutral-100 p-4 gap-8 lg:p-0 lg:bg-transparent lg:flex lg:flex-grow") }}>
+      {% set list_style = "group" %}
+      {% set item_style = item_style ~ " uppercase" %}
     {% else %}
-      <ul>
+      <ul class="flex flex-col ml-6 lg:m-0 lg:group-hover:flex lg:hidden lg:absolute lg:bg-neutral-100 lg:p-4 lg:bg-opacity-95 lg:gap-4">
+      {% set list_style = "list-item list-dash lg:list-none" %}
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes.addClass("border-double border-teal-400 border-l-[7px] pl-2 lg:border-l-0 lg:border-r-[7px] lg:last:border-r-0 lg:py-1 lg:px-6") }}>
-        {{ link(item.title, item.url, { 'class': ['text-neutral-500', 'hover:text-teal-500', 'uppercase', 'font-bold', 'lg:text-xl'] }) }}
+      {%
+        set item_classes = [
+          item_style,
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'inline-block ehcc-underline',
+        ]
+      %}
+      <li class="{{list_style}}">
+        {{ link(item.title, item.url, item.attributes.addClass(item_classes)) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}

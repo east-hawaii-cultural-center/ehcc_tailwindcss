@@ -20,27 +20,61 @@
   }
 }
 
-@layer components {
+@layer utilities{
+  .ehcc-underline{
+    position: relative;
+    z-index: 1;
+  }
+  .ehcc-underline:after{
+    content: '';
+    display: block;
+    height: 5px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==');
+    position: relative;
+    top: -.5ex;
+    z-index: -1
+  }
+
   .ehcc-container{
     @apply container mx-auto;
   }
   .ehcc-p{
     @apply p-4 md:p-6;
   }
+  /* .pipe-list > li:before{
+    content: '';
+    display: block;
+    @apply border-l;
+  } */
+}
 
-  .header-nav-grid{
-    display: grid;
+@layer components {
+  html:not([data-scroll='0']) #ehcc-header{
+    @apply shadow-md;
+  }
+
+  .ehcc-header-nav-grid{
+    @apply grid;
+    grid-template-columns: 1fr auto;
     grid-template-areas:
-      "logo secondary"
+      "logo burger"
+      "secondary secondary"
       "primary primary";
+    
+    @media screen(sm) {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "logo secondary burger"
+        "primary primary primary";
+    }
 
     @media screen(lg) {
+      grid-template-columns: auto 1fr;
       grid-template-areas:
         "logo secondary"
         "logo primary";
     }
-    grid-template-columns: auto 1fr;
-    @apply gap-2;
+    
   }
 
   .block,
@@ -57,20 +91,6 @@
   /* [id$="-local-tasks"] ul {
     @apply list-disc list-inside
   } */
-
-  .ehcc-underline{
-    position: relative;
-    z-index: 1;
-  }
-  .ehcc-underline:after{
-    content: '';
-    display: block;
-    height: 5px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==');
-    position: relative;
-    top: -.5ex;
-    z-index: -1
-  }
 }
 
 /* Added this to fix a layout issue in the Layout Builder sidebar where the CK Editor triple dot menu gets cut off by overflow: auto on the parent */

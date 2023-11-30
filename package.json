@@ -5,6 +5,7 @@
     "build": "npx tailwindcss --input src/tailwind.pcss --output dist/tailwind.css --minify"
   },
   "dependencies": {
+    "flowbite": "^2.2.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.1"
   }
