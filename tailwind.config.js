@@ -31,12 +31,21 @@ module.exports = {
     'items-center',
     'object-cover',
     'my-8',
+    'text-lg',
+    'text-xl',
+    'text-2xl',
+    'text-3xl',
+    'text-4xl',
+    'text-5xl',
+    'font-bold',
   ],
   variants: {
     extend: {},
   },
   plugins: [
+    // See https://flowbite.com/
     require('flowbite/plugin'),
+    // See https://bustoutsolutions.github.io/tailwindcss-container-bleed/
     require('tailwindcss-container-bleed'),
   ],
 };

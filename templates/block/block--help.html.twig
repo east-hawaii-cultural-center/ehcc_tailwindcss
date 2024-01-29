@@ -30,7 +30,7 @@
   <div class="bg-blue-100 border border-blue-500 text-sky-700 px-4 py-3" role="alert">
     {{ title_prefix }}
     {% if label %}
-      <h2{{ title_attributes.addClass('inline-block', 'font-bold', 'text-lg', 'border-b', 'border-current') }}>{{ label }}</h2>
+      <h3{{ title_attributes.addClass('inline-block', 'font-bold', 'text-lg', 'border-b', 'border-current') }}>{{ label }}</h3>
     {% endif %}
     {{ title_suffix }}
     {% block content %}

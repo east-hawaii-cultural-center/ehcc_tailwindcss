@@ -29,7 +29,8 @@
 <div{{ attributes }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('inline-block', 'font-bold', 'text-lg', 'border-b', 'border-current') }}>{{ label }}</h2>
+    {# <h3{{ title_attributes.addClass('inline-block', 'font-bold', 'text-lg', 'border-b', 'border-current') }}>{{ label }}</h3> #}
+    <h3{{ title_attributes }}>{{ label }}</h3>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

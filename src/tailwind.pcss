@@ -19,28 +19,43 @@
     @apply text-sky-700;
   }
 
-  h1{
-    @apply text-5xl font-extrabold;
+  /* ehcc-underline text-neutral-500 uppercase font-bold text-2xl lg:text-3xl */
+  main {
+    h1{
+      @apply text-4xl lg:text-5xl font-bold;
+    }
+
+    h2{
+      @apply text-3xl lg:text-4xl font-bold;
+    }
+
+    h3{
+      @apply text-2xl lg:text-3xl font-bold;
+    }
+
+    h4{
+      @apply text-xl font-bold;
+    }
+
+    h5{
+      @apply text-lg font-bold;
+    }
+
+    h6{
+      @apply font-bold;
+    }
   }
 
-  h2{
-    @apply text-4xl font-bold;
-  }
-
-  h3{
-    @apply text-3xl font-bold;
-  }
-
-  h4{
-    @apply text-2xl font-bold;
-  }
-
-  h5{
-    @apply text-xl font-bold;
-  }
-
-  h6{
-    @apply text-lg font-bold;
+  footer {
+    h2{
+      @apply text-xl lg:text-2xl font-bold;
+    }
+    h3{
+      @apply text-lg lg:text-xl font-bold;
+    }
+    h4{
+      @apply font-bold underline;
+    }
   }
 }
 
@@ -55,7 +70,7 @@
     height: 5px;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAIdHR3/GWF8EKeiooIRLADjgNiMyByQAADD7Q6cSTg+rwAAAABJRU5ErkJggg==');
     position: relative;
-    top: -.5ex;
+    bottom: 0;
     z-index: -1
   }
 
