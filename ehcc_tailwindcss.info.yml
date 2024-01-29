@@ -11,8 +11,6 @@ regions:
   secondary_menu: 'Secondary menu'
   search: 'Search'
   highlighted: Highlighted
-  sidebar_first: 'Left sidebar'
-  sidebar_second: 'Right sidebar'
   breadcrumb: Breadcrumb
   content: Content
   help: Help
